@@ -8,32 +8,9 @@
   <link rel="stylesheet" href="./assets/css/main.css">
   <script src="./assets/js/script.js" defer></script>
 </head>
-<body>
-  <section>
-    <img id="image-1" src="https://picsum.photos/id/1080/200" alt="image">
-    <button data-button>button 1</button>
-    <button onclick="button2Clicked()">button 2</button>
-  </section>
-
-  <hr>
-  <label for="">
-    enter text here
-    <input type="text" data-text>
-  </label>
-  <button onclick="textEntered()">button3</button>
-  <h1 data-entry></h1>
-  <hr>
-  <label for="">enter fruit name
-    <input type="text" id="fruit-text">
-  </label>
-  <button onclick="dataEntered()">button4</button>
-  <ul id="fruit-list"></ul>
-  <hr>
-  <label for="">enter anything
-    <input data-letters type="text" onkeyup="letterTyped()">
-
-  </label>
-  <span id="span-text"></span>
+<body onresize="windowResized()">
+  <div class="ball" data-ball></div>
+  
   
 </body>
 </html>

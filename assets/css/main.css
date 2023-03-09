@@ -5,8 +5,7 @@
   
   html,
   body {
-    height: 100%;
-    padding: 10px;
+    height: 100%;    
   }
 
   input[type='text'] {
@@ -18,4 +17,14 @@
   button {
     height: 50px;
     width: 100px;
+  }
+
+  .ball {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    /* position: relative; */
+    transition: transform 1000ms ease-out;
+    
   }

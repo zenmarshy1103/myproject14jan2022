@@ -1,43 +1,64 @@
-function button1Clicked() {
-    console.log("button 1 clcked")
-    const img = document.querySelector('#image-1')
-    img.style.rotate='45deg'
+// const num = 99;
+
+
+
+// if(num===10) {
+//     document.body.style.setProperty('background-color','red')
+
+// } else {
+//     console.log('age is something else');
+
+// }
+
+// if(num <= 10) {
+//     document.body.style.setProperty('background-color','red')
+
+// } else {
+//     console.log('age is something else');
+
+// }
+
+// if(num>10) {
+//     document.body.style.setProperty('background-color','green')
+
+// } else {
+//     console.log('age is something else');
+
+// }
+
+
+function windowResized() {
+    // console.log("Window Resized");
+    const myBrowserWidth = window.innerWidth;
+
+    if(myBrowserWidth>1200){
+        document.body.style.setProperty('background-color','blue')
+    } else {
+        document.body.style.setProperty('background-color','green')
+    }  
 }
 
-
-document.querySelector('[data-button]').addEventListener('click', button1Clicked)
-
-function button2Clicked() {
-    console.log("button 2 clicked")
-    document.body.style.setProperty('backgound-color', 'green')
+function moveBall(event) {
+    // console.log(event.x)
+    // console.log(event.y)
+    const x = event.x;
+    const y = event.y;
+    const ball = document.querySelector('[data-ball]')
+    // ball.style.top = top + 'px';
+    // ball.style.left = left + 'px';
+    //transform: transform(200px, 100px);
+    ball.style.transform = `translate(${x-50}px, ${y-50}px)`; //Backticks ``
 }
 
-function textEntered() {
-    let text = document.querySelector('[data-text]').value;
-    console.log(text)
-    const p = document.querySelector('[data-entry]')
-    p.textContent = text
-}
-
-function dataEntered() {
-    // console.log('data-entered');
-    const input = document.querySelector('#fruit-text');
-    const value = input.value;
-    console.log(value)
-    const li = document.createElement('li');
-    li.innerHTM = value;
-    console.log(li);
-    const ul = document.querySelector('#fruit-list')
-    ul.appendChild(li)
+document.addEventListener("click", moveBall)
 
 
+//Arrays
 
-
-}
-
-function letterTyped() {
-    const text = document.querySelector('[data-letters]').value
-    // console.log(text)
-    const spanText = document.querySelector("#span-text")
-    spanText.textContent = text
-}
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numbers.forEach(function(number){
+    // console.log(number);
+    const img = document.createElement('img');
+    img.src =`https://picsum.photos/id/${number}/200`
+    document.body.appendChild(img);
+})
