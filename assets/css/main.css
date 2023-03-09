@@ -6,99 +6,42 @@ html, body {
     height: 100%;
 }
 
-section {
-    place-content: center ;
-    height: 100vh;
+figure {
+    height: 100%;
     display: grid;
-    gap: 3px;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3,200px);
     grid-template-rows: repeat(3,200px);
-    /* justify-items: end;
-    align-items: start; */
-    grid-auto-flow: row;
-    /* sets the size of the grid of each row */
-    grid-auto-rows: 200px;  
+    gap:10px;
+    place-content: center;
+    grid-auto-flow: 200px;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;    
+}
     
-    /* grid-auto-flow: column; */
-}
-
-section div {
-    background-color: red;
-    font-size: 4em;
-}
-
-section div:first-child {
-    background-color: green;
-    /* spans the length of the elements in the block */
-    /* grid-column-start:2;
-    grid-column-end:4;
-    grid-row-start: 2;
-    grid-row-end: 3; */
-}
-
-section div:nth-child(4) {
-    background-color: darkslateblue;
-    /* USE THIS way (shorter)!!! another way of method similar to grid-column-start, end , grid-row-start, end; */
-    grid-column: 2/3;
-    grid-row: 1/2;
-}
-
-section div:nth-child(7) {
-    background-color: yellow;
+figure img:first-child {
     grid-column: span 2;
+}
+
+figure img:nth-child(2) {
     grid-row: span 2;
 }
 
-nav {
-    height: 100px;
-    border: 2px solid;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(8, 1fr);
-    justify-items: center;
-    align-items: center;
+figure img:nth-child(6) {
+    grid-column: span 2;
+    grid-row: 3/5 ;
 }
 
-nav img {
-    grid-column: span 5;
-    justify-self: start;
+figure img:last-of-type {    
+    grid-column: span 2;
 }
 
-nav a:last-child {
-    align-self: end;
-    justify-self: end;
-}
-
-article {
-    height: 200px;
-    gap: 5px;
-    background-color: lightyellow;
-    display: flex;
-
-}
-
-article p {
-    /* flex-basis: 33.33%; */
-    flex-grow: 1;
-}
-
-article p:nth-child(2) {
-    background-color: pink;
-    /* flex-grow: 1; */
-    flex-grow: 2;
-}
-
-main {
-    display: flex;
-    height: 300px;
-    gap: 10px;
-}
-
-main p {
-    /* flex-shrink: 1; */
-    flex: 1 1 auto;
-}
-
-main p:nth-child(2) {
-    /* flex-shrink: 2; */
+img:hover {
+    opacity: 0.75;
+    border: 2px solid red;
 }
