@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+section div:first-of-type {
+    background-color: blue;
+}
+section div:last-child {
+    background-color: green;
+}
+
+section div:nth-child(5) {
+    background-color: pink;
+}
+
+section {
+    place-content: center ;
+    height: 100vh;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3,200px);
+    /* justify-items: end;
+    align-items: start; */
+}
+
+div {
+    background-color: red;
+}
+
+/* :first-child
+:last-child
+:nth-child()
+
+:first-of-type
+:last-of-type
+:nth-of-type() */
